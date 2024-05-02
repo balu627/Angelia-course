@@ -8,7 +8,7 @@
 }
 .container{
     background-color: skyblue;
-    height: 50px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,6 +65,10 @@ h1{
     height: 2rem;
     padding-left:1rem;
     padding-right:1rem;
+    text-decoration: none;
+}
+#loginbtn{
+    text-decoration: none;
 }
 .fmid{
     display: flex;
@@ -87,17 +91,103 @@ input{
     background-color: rgb(91, 90, 90);
     color:white;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 .brandlogo{
+    display: flex;
     font-family: cursive;
     font-size: x-large;
+    align-content: center;
 }
-.sociallogo{
-    display: flex;
-    gap: 1.5rem;
+.brandlogo > a{
+    text-decoration: none;
+    color:white
+}
+a{
+    cursor: pointer;
+}
+.brandlogo > img{
+    padding-top: 0.2rem;
+    padding-left: 0.5rem;
 }
 .rboder{
-    border-radius: 50px;
+    border-radius: 100px;
+}
+.logo {
+        display: none; 
+    } 
+
+.bodyctr{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 80%;
+    /* height: 90%; */
+    background-color: rgb(165, 228, 255);
+    border:1.5px solid black;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.bodyctr .ext1{
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+    margin-left: 2rem;
+}
+.bodyctr .ext2{
+    padding: 0.5rem;
+    margin-left: 2rem;
+}
+.bodyctr .ext2 .int{
+    margin: 15px;
+    font-size:medium;
+    font-weight: 700;
+    font-family:Georgia, 'Times New Roman', Times, serif    ;
+    border: 1px solid black;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+}
+.bodyctr .bfoot{
+    display: flex;
+    justify-content: space-between;
+}
+.bodyctr .bfoot .btn1{
+    margin-left: 3.5rem;
+    padding: 0.5rem 1rem ;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+.bodyctr .bfoot .btn2{
+    margin-right: 1.5rem;
+    padding: 0.5rem 1rem ;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+.bodyctr .bfoot :hover{
+    background-color: beige;
+}
+@media screen and (max-width: 600px) {
+    .logo{
+        padding-top:10px;
+        padding-left:20px;
+        display: block;
+    }
+    .navhead{
+        display: none;
+    }
+    .container{
+        display: flex;   
+        flex-direction: column;
+        align-items:start;
+        height: 250px;
+    }
+    .right{
+        width: 100dvw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:1.5rem;
+        padding-bottom: 20px;
+    }
 }
