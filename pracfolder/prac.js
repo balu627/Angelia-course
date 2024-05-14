@@ -45,15 +45,99 @@
 //     return str.toLowerCase();
 // }
 //Arroe function;
-const initarr = ["2024-05-29","2022-08-09","2020-12-02","2015-08-11"];
-const modiarr = initarr.map(str=>{
-    const split = str.split("-");
-    return `${split[2]}/${split[1]}/${split[0]}`;
-});
-console.log(modiarr);
+// const initarr = ["2024-05-29","2022-08-09","2020-12-02","2015-08-11"];
+// const modiarr = initarr.map(str=>{
+//     const split = str.split("-");
+//     return `${split[2]}/${split[1]}/${split[0]}`;
+// });
+// console.log(modiarr);
 //traditional function
 // function formaterDate(str)
 // {
 //     const split = str.split("-");
 //     return `${split[2]}/${split[1]}/${split[0]}`;   
 // }
+
+// //Pomises
+// let pros = new Promise((resolve,reject)=>{
+//     if(1+1==2)
+//         {
+//             resolve("Success");
+//         }
+//         else{
+//             reject("Failed");
+//         }
+// });
+// pros.then((Message)=>{
+//     console.log("This is in Then block With "+Message);
+// })
+// .catch((message)=>{
+//     console.log("This is inside Catch block "+message);
+// });
+
+// function random()
+// {
+//     console.log("first line");
+//     setTimeout(() => {
+//         console.log("mid line");
+//     }, 2000);
+//     console.log("second line");
+// }
+
+// random();
+// function sleep() {
+//     let sum =0;
+//     for(let i=0;i<900000000;i++)
+//         {
+//             sum+=i;
+//         }
+//     return sum;
+// }
+// function random() {
+//     let ans = sleep();
+//     console.log(ans);
+// }
+// console.log("first line");
+// random();
+// console.log("second line");
+
+// function sleep()
+// {
+//     let sum =0;
+//     for(let i =0;i<900000000;i++)
+//         {
+//             sum+=i;
+//         }
+//     return sum;
+// }
+// async function sync()
+// {
+//     let ans = await sleep();
+//     console.log("mid");
+// }
+// console.log("first line");
+// sync();
+// console.log("last line");
+
+async function surya()
+{
+    try{
+        let res = await fetch("https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple");
+        let resjs = await res.json();
+        let result  = resjs.results;
+        console.log(result);
+        result.forEach(arr=>{
+            let ques = `<h1>${arr.question}</h1>`;
+            let opt  = arr.incorrect_answers;
+            opt.push(arr.correct_answer);
+            opt.forEach(sopn=>{
+                ques+=`<li>${sopn}</li>`;
+            });
+            document.querySelector('div').insertAdjacentHTML('afterbegin',ques);
+        });
+    }
+    catch{
+        setTimeout(surya,500);
+    }
+}
+surya();
