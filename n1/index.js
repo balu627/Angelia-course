@@ -107,3 +107,19 @@
 //     }
 // }
 // surya();
+
+async function surya() {
+    try {
+        let res = await fetch("https://reqres.in/api/users/2", {
+            method: "DELETE"
+        });
+        if (res.ok) {
+            console.log("Success:",res.status);
+        } else {
+            console.error("Failed:", res.status);
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+surya();
