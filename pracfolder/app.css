@@ -106,6 +106,11 @@ input{
 }
 a{
     cursor: pointer;
+    text-decoration: none;
+    color:black
+}
+a:hover{
+    color:rgb(243, 229, 126);
 }
 .brandlogo > img{
     padding-top: 0.2rem;
